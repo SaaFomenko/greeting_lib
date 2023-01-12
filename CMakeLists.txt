@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.5.0)
+project(greeting)
+set(SOURCE_EXE main.cpp)
+set(SOURCE_LIB greeter.h greeter.cpp)
+add_library(greeter STATIC ${SOURCE_LIB})
+add_executable(greeter.exe ${SOURCE_EXE})
+target_link_libraries(greeter.exe greeter)
