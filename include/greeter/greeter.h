@@ -1,5 +1,5 @@
-#if !defined(GREETER_CLASS)
-#define GREETER_CLASS
+#if !defined(GREETER_CLASS_H)
+#define GREETER_CLASS_H
 
 class Greeter
 {

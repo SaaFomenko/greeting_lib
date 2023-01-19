@@ -1,5 +1,5 @@
 #include <string>
-#include "greeter.h"
+#include <greeter/greeter.h>
 
 
 Greeter::Greeter(std::string msg) :

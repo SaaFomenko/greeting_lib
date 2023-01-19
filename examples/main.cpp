@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "greeter.h"
+#include <greeter/greeter.h>
 
 
 int main()
