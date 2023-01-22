@@ -1,11 +1,17 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(greeter 
-	VERSION 1.0.0
-	DESCRIPTION "C++ library with class Greeter, built with CMake"
-	LANGUAGES CXX)
+project(greeter) 
 
-set(public_headers "include/${PROJECT_NAME}/*.h")
-set(sources "src/*.cpp")
+if (NOT CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
+    message(STATUS "This project has a top-level one called [${CMAKE_PROJECT_NAME}]")
+else()
+    message(STATUS "This project is a top-level one")
+endif()
 
-add_library(${PROJECT_NAME}_lib ${sources} ${public_headers})
+file(GLOB
+	public_headers "include/${PROJECT_NAME}/*.h"
+	sources "src/*.cpp")
+
+include_directories("${PROJECT_SOURCE_DIR}/include")
+
+add_library(${PROJECT_NAME}_lib STATIC ${sources} ${public_headers})
